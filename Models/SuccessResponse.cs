@@ -1,8 +1,16 @@
 ﻿namespace TpIntegradorSofttekFront.Models
 {
-	public class SuccessResponse
+	public class SuccessResponse<T>
 	{
 		public int Status { get; set; }
-		public object Data { get; set; }
-	}
+		public T? Data { get; set; }
+       
+    }
+
+    public class SuccessResponseList<T> 
+    {
+        public int Status { get; set; }
+        public List<T>? Data { get; set; }
+
+    }
 }

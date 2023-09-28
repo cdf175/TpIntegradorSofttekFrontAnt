@@ -24,11 +24,11 @@ namespace TpIntegradorSofttekFront.Controllers
 			var baseApi = new BaseApi(_httpClient);
 			var response = await baseApi.PostToApi("Login", dto);
 			var loginResult = response as OkObjectResult;
-			var loginObject = JsonConvert.DeserializeObject<SuccessResponse>(loginResult.Value.ToString());
-			var ObjectSerialize = JsonConvert.SerializeObject(loginObject.Data);
-			var login = JsonConvert.DeserializeObject<Login>(ObjectSerialize);
+			var loginSuccess = JsonConvert.DeserializeObject<SuccessResponse<Login>>(loginResult.Value.ToString());
+			Login login = loginSuccess.Data;
 
 			return View("~/Views/Home/Index.cshtml",login);
 		}
+
 	}
 }
