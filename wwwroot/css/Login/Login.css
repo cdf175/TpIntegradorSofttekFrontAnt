@@ -11406,6 +11406,7 @@ body {
     position: relative;
     z-index: 0;
     padding: 0;
+    height: 100vh;
 }
 
     body:after {
@@ -11418,6 +11419,7 @@ body {
         background: #000;
         opacity: .8;
         z-index: -1;
+        
     }
 
 a {
@@ -11447,7 +11449,7 @@ h1, h2, h3, h4, h5,
 }
 
 .ftco-section {
-    padding: 7em 0;
+    padding: 2em 0;
 }
 
 .ftco-no-pt {
