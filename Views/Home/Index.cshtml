@@ -1,9 +1,87 @@
-﻿@model TpIntegradorSofttekFront.Models.Login
+﻿@model TpIntegradorSofttekFront.ViewModels.HomeViewModel
 @{
     ViewData["Title"] = "Home Page";
 }
 
+@* <h3>@Html.DisplayFor(p => p.Name)</h3> *@
+@Html.HiddenFor(x=> x.Token)
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    @Html.DisplayFor(p => p.Name)
+    <div style="height: 70vh">
+        <div id="carouselExampleControls" class="carousel slide carousel-fade h-100 " data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
+        </div>
+        <div class="carousel-inner h-100 ">
+            <div class="carousel-item active h-100 ">
+                <div class="row h-100">
+                     <div class="col-12 bg-dark items-corousel" style="height:30%">
+                        <div class="text-light p-3">
+                            <h4><a class="nav-link text-light" asp-area="" asp-controller="Service" asp-action="Index">Servicios</a></h4>
+                            <p>
+                                Podrás ver todos los servicios que ofrece nuestra empresa.
+                            </p>
+      
+                        </div>
+                    </div>
+                        <a class="text-light" asp-area="" asp-controller="Service" asp-action="Index" style="height:70%">
+                        <div class="col-12 px-0 items-corousel h-100">
+                            <img class="card-img-top h-100" src="/images/petrolera.jpg" alt="">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="carousel-item h-100 ">
+                <div class="row h-100">
+
+                        <div class="col-12 bg-dark items-corousel" style="height:30%">
+                        <div class="text-light p-3">
+                            <h4><a class="nav-link text-light" asp-area="" asp-controller="Proyect" asp-action="Index">Proyectos</a></h4>
+                            <p>
+                                Consulta los proyectos en los que estamos trabajando.
+                            </p>
+                        </div>
+                    </div>
+                        <a class="text-light" asp-area="" asp-controller="Proyect" asp-action="Index" style="height:70%">
+                        <div class="col-12 items-corousel px-0 h-100" style="height:100%">
+                            <img class="card-img-top h-100" src="/images/proyecto.webp" alt="">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="carousel-item h-100 ">
+                <div class="row h-100">
+
+                        <div class="col-12 bg-dark items-corousel" style="height:30%">
+                        <div class="text-light p-3">
+                            <h4><a class="nav-link text-light" asp-area="" asp-controller="Work" asp-action="Index">Trabajos</a></h4>
+                            <p>
+                                Consulta todos los trabajos que estamos realizando.
+                            </p>
+                        </div>
+                    </div>
+                        <a class="text-light" asp-area="" asp-controller="Work" asp-action="Index" style="height:70%">
+                        <div class="col-12 items-corousel px-0 h-100" >
+                            <img class="card-img-top h-100" src="/images/trabajadores.webp" alt="">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+    </div>
+
+
+
 </div>
+
+<script src="~/js/Home/Home.js"> </script>

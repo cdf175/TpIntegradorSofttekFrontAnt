@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,24 +7,50 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/TpIntegradorSofttekFront.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" asp-append-version="true" />
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/Utils/Utils.js" asp-append-version="true"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://kit.fontawesome.com/85c216f953.js" crossorigin="anonymous"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TechOil</a>
+                <a class="navbar-brand d-flex flex-column align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="/images/TechOilLogo.ico" height="28" width="28" alt="CoolBrand">
+                    <h6>TechOil</h6>
+                </a>
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav flex-grow-1" style="margin-left:2rem">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link nav-item" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li>
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Service" asp-action="Index">Servicios</a>
+                            <a class="nav-link nav-item" asp-area="" asp-controller="Service" asp-action="Index">Servicios</a>
                         </li>
+                        <li>
+                            <a class="nav-link nav-item" asp-area="" asp-controller="Proyect" asp-action="Index">Proyectos</a>
+                        </li>
+                        <li>
+                            <a class="nav-link nav-item" asp-area="" asp-controller="Work" asp-action="Index">Trabajos</a>
+                        </li>
+                        <li>
+                            <a class="nav-link nav-item" asp-area="" asp-controller="User" asp-action="Index">Usuarios</a>
+                        </li>
+                        <div class="w-100 d-flex flex-row-reverse bd-highlight">
+                            <a class="nav-link nav-item" asp-area="" asp-controller="Login" asp-action="CerrarSesion">Cerrar Sesión</a>
+                        </div>
                     </ul>
                 </div>
             </div>
@@ -36,14 +62,11 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted bg-dark">
         <div class="container">
             &copy; 2023 - TpIntegradorSofttekFront
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    
 </body>
 </html>

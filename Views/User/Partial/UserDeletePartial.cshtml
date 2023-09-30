@@ -1,0 +1,29 @@
+﻿@model TpIntegradorSofttekFront.ViewModels.UserViewModel
+<div class="modal fade" id="userDModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Eliminacíon de Usuario.</h5>
+            </div>
+            @using (Html.BeginForm("DeleteUser", "/User", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(x=> x.Id)
+                    @Html.HiddenFor(x=> x.Name)
+                    @Html.HiddenFor(x=> x.Password)
+                    @Html.HiddenFor(x=> x.Dni)
+                    @Html.HiddenFor(x=> x.Email)
+                    @Html.HiddenFor(x=> x.Type)
+                    <div class="row">
+                        <h3>Desea eliminar este usuario?</h3>
+                    </div>
+                </div>
+
+                <div class="modal-footer w-100">
+                    <button type="button" class="btn btn-secondary w-25" data-bs-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-success w-25" id="btnGuardar">Si</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
